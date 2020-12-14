@@ -3,13 +3,13 @@
 /*
 *
 * Plugin Name: OCWS Commerce Admin Bar
-* Plugin URI: http://oldcastleweb.com/pws/plugins
+* Plugin URI: https://oldcastleweb.com/plugins/ocws-woocommerce-adminbar/
 *
 * Description: This plugin will check to see if the WooCommerce plugin or the Classic Commerce plugin exists. If it does, it will look at the orders, and publish the number of pending orders on the admin bar.
 *
-* Version: 1.0.0
+* Version: 1.0.1
 * Author: Paul Taylor
-* Author URI: http://oldcastleweb.com/pws/about
+* Author URI: http://oldcastleweb.com/about
 * License: GPL2
 *
 * WC requires at least: 3.2
@@ -62,7 +62,7 @@
                 // global $wp_version;
                 // global $post;
                 
-                if ((is_admin())||(current_user_can('editor'))) { // to test to see if the user is an admin; otherwise do nothing
+                // if ((is_admin())||(current_user_can('editor'))) { // to test to see if the user is an admin; otherwise do nothing
                 
                     // $ocws_wcab_countposts = wp_count_posts('shop_order');
                     // $ocws_wcab_orders = $ocws_wcab_countposts->wc-completed;
@@ -78,7 +78,7 @@
                                     'title' => $ocws_wcab_title." ".(ocws_wbac_count_orders('pending') + ocws_wbac_count_orders('processing')),
                                     'href' => site_url('/wp-admin/edit.php?post_type=shop_order'),
                                     ));
-                } // the plugin does nothing if the user is not an admin
+               // } // the plugin does nothing if the user is not an admin
         } // end ocws_wcab_newmenu
         
         function ocws_wbac_count_orders( $status ) {
