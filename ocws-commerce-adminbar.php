@@ -7,7 +7,7 @@
 *
 * Description: This plugin will check to see if the WooCommerce plugin or the Classic Commerce plugin exists. If it does, it will look at the orders, and publish the number of pending orders on the admin bar.
 *
-* Version: 1.0.1
+* Version: 1.1.0
 * Author: Paul Taylor
 * Author URI: http://oldcastleweb.com/about
 * License: GPL2
@@ -100,7 +100,15 @@
             return $total_orders;
         } // end function ocws_wbac_count_orders
 
-
+		function commerce_adminbar_notice() {
+			global $pagenow;
+			if ( $pagenow == 'index.php' ) {
+				echo '<div class="notice notice-warning is-dismissible">
+						<p>The OCWS Commerce AdminBar displays the number of current orders in the adminbar</p>
+						</div>';
+			}
+		}
+		add_action('admin_notices', 'commerce_adminbar_notice');
 
 
 ?>

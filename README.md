@@ -8,6 +8,9 @@ This plugin will check to see if a Commerce plugin exists (either WooCommerce or
 
 The plugin was originally designed for WooCommerce, and then updated to work with the new open source Classic Commerce.
 
+## Version 1.1.0
+It is a few years since this plugin was written. So, I checked that it still worked, then added an AdminBar notice, so that there was a new feature to work.
+
 ## Version 1.0.1
 Menu now appears on both front and back ends.
 
